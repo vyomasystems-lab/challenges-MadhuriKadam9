@@ -21,6 +21,8 @@ async def test_seq_bug1(dut):
     dut.reset.value = 1
     await FallingEdge(dut.clk)  
     dut.reset.value = 0
+    #await FallingEdge(dut.clk)
+    dut.inp_bit.value = 0
     await FallingEdge(dut.clk)
     dut.inp_bit.value = 1
     await FallingEdge(dut.clk)
@@ -28,8 +30,16 @@ async def test_seq_bug1(dut):
     await FallingEdge(dut.clk)
     dut.inp_bit.value = 1
     await FallingEdge(dut.clk)
+    dut.inp_bit.value = 1         # 1011 detected 1st time and OL 1011 seq is applied again
+    await FallingEdge(dut.clk) 
+    print(dut.seq_seen)   # Seq_seen = 1
+    dut.inp_bit.value = 0
+    await FallingEdge(dut.clk)
     dut.inp_bit.value = 1
     await FallingEdge(dut.clk)
+    dut.inp_bit.value = 1       # OL 1011 seq end here
+    await FallingEdge(dut.clk)
+    print(dut.seq_seen)     # Seq_seen = 0  test failed to detect OL 1011
     assert dut.seq_seen.value == 1, f"Sequence 1011 at output in not detected "
 
-    #cocotb.log.info('#### CTB: Develop your test here! ######')
+    
