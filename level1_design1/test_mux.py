@@ -33,7 +33,7 @@ async def test_mux(dut):
      await Timer(2, units='ns')
 
      dut._log.info(f'INP0={INP0:05} INP1={INP1:05} INP2={INP2:05} INP3={INP3:05} INP4={INP4:05} INP5={INP5:05} INP6={INP6:05} INP30={INP30:05} SEL={SEL:05} model={int(dut.inp30.value):05} DUT={int(dut.out.value):05}')
-    assert dut.out.value == dut.inp0.value, "Randomised test failed with: {INP0} = {OUT}".format(INP0=dut.inp0.value,INP1=dut.inp1.value,INP2=dut.inp2.value,INP3=dut.inp3.value, INP4=dut.inp4.value, INP5=dut.inp5.value, INP6=dut.inp6.value, INP30=dut.inp30.value, OUT=dut.out.value)
+    assert dut.out.value == dut.inp30.value, "Randomised test failed with: {INP30} = {OUT}".format(INP0=dut.inp0.value,INP1=dut.inp1.value,INP2=dut.inp2.value,INP3=dut.inp3.value, INP4=dut.inp4.value, INP5=dut.inp5.value, INP6=dut.inp6.value, INP30=dut.inp30.value, OUT=dut.out.value)
 
 @cocotb.test()
 async def mux_basic_test(dut):
