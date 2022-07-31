@@ -22,13 +22,12 @@ async def test_wat_vend(dut):
     dut.clk.value = 0
     await FallingEdge(dut.clk)  
     dut.rst.value = 0
-    dut.inp.value = 1     
-    print(dut.out)
+    dut.inp.value = 1     # Rs. 5 Inserted
+    await FallingEdge(dut.clk)     
+    print(dut.out)       # Rs. 5 Collected but No Bottle
     await FallingEdge(dut.clk)
-    dut.inp.value = 2     
-    print(dut.out)
+    dut.inp.value = 2     # Rs. 10 Inserted
     await FallingEdge(dut.clk)
-    dut.inp.value = 2     
-    print(dut.out)   
-       
+    print(dut.out)        # Total Rs. 15 Collected so Bottle is delivered
+            
     assert dut.out.value == 1, f"Water bottle is not delivered"
