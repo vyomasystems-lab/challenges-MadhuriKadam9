@@ -44,4 +44,34 @@ Updating the design i.e. adding the inp30 entry in design code and re-running th
 
 
 # 2. Sequence Detector Design Verification
+## Verification Environment
+The [CoCoTb](https://www.cocotb.org/) based Python test is developed as explained. 
+The test drives inputs to the Design Under Test (Sequence Detector module here) which has 3 each inputs clk, reset and inp_bit and gives High on one bit output *seq_seen* if the said sequence i.e. 1011 is detected.
+
+The values are assigned to the input port using 
+```
+dut.reset.value = 1
+dut.inp_bit.value = 1
+
+```
+![OL1011test](https://user-images.githubusercontent.com/88900482/182029249-433469bf-da4e-492e-8503-9325044e42c6.PNG)
+
+## Test Scenario **(Important)**
+- Test Inputs: Overlapping sequence 1011011 using timer
+- Expected Output: out=0001001
+- Observed Output in the DUT dut.out=0001000    It is observed using  print(dut.seq_seen) as shown below
+
+![Seq_det_bug_captured](https://user-images.githubusercontent.com/88900482/182029706-d8a31af4-ba01-44d9-8a4d-8585c4d24da4.PNG)
+
+## Design Bug
+Based on the above test input and analysing the design, we see the following
+Output mismatches for the above inputs proving that there is a design bug
+
+<img width="264" alt="sol1" src="https://user-images.githubusercontent.com/88900482/182029792-d601c875-85ed-4ae7-8062-7f5a6b154a79.PNG">
+<img width="185" alt="sol2" src="https://user-images.githubusercontent.com/88900482/182029797-b96ee1bf-a660-415a-b610-97fb72e8a640.PNG">
+
+## Design Fix
+Updating the design i.e. making required changes in design code as shown above and re-running the test makes the test pass. Now It is able to detect overlapping sequence 1011 by printing Seq_seen = 1 two times 
+
+<img width="746" alt="Bug-fixed-test pass" src="https://user-images.githubusercontent.com/88900482/182029881-ed783b09-21e9-4dc5-b9f4-69bb7db933ce.PNG">
 
