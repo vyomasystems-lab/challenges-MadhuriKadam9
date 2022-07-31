@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1659279472" />
+    <testcase name="test_wat_vend" classname="test_wat_vend" file="/workspace/challenges-MadhuriKadam9/level3_design/test_wat_vend.py" lineno="13" time="0.0015172958374023438" sim_time_ns="25000.001" ratio_time="16476681.99156254" />
+  </testsuite>
+</testsuites>
