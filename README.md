@@ -31,6 +31,18 @@ The following error is seen:
 Based on the above test input and analysing the design, we see the following
 
 Output mismatches for the above inputs proving that there is a design bug
+```
+ always @(a or b) 
+  begin
+    sum = a - b;             ====> BUG
+  end
+```
+For the adder design, the logic should be ``a + b`` instead of ``a - b`` as in the design code.
+## Design Fix
+Updating the design and re-running the test makes the test pass.
+
+![Bug-fixed](https://user-images.githubusercontent.com/88900482/182028630-93d4ede9-85f5-4192-bc04-3788dfbace8a.PNG)
+
 
 # 2. Sequence Detector Design Verification
 
