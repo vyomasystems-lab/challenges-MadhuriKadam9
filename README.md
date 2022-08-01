@@ -93,7 +93,7 @@ The [CoCoTb](https://www.cocotb.org/) based Python test is developed as explaine
 # 4. Water Bottle Vending Machine Verification- Level3 Design
 ## 4.1 Verification Environment
 The [CoCoTb](https://www.cocotb.org/) based Python test is developed as explained. 
-The test drives inputs to the Design Under Test (Sequence Detector module here) which has 3 each inputs clk, reset each one bit and *inp* input is a 2 bit to accept either 0Rs (00) or 5Rs(01) or 10Rs(10) coin. If Total coin value collected by machine is equal to or greater than 15 Rs then only Water bottle is delivered generating High on *out*. If out = 0 then bottle is not delivered. 
+The test drives inputs to the Design Under Test (Water bottle vending module here) which has 3 each inputs clk, reset each one bit and *inp* input is a 2 bit to accept either 0Rs (00) or 5Rs(01) or 10Rs(10) coin. If Total coin value collected by machine is equal to or greater than 15 Rs then only Water bottle is delivered generating High on *out*. If out = 0 then bottle is not delivered. 
 
 The values are assigned to the input port using 
 ```
