@@ -75,6 +75,21 @@ Updating the design i.e. making required changes in design code as shown above a
 
 <img width="746" alt="Bug-fixed-test pass" src="https://user-images.githubusercontent.com/88900482/182029881-ed783b09-21e9-4dc5-b9f4-69bb7db933ce.PNG">
 
+# 3. Bitmanipulation Processor Verification
+## 3.1 Verification Environment
+The [CoCoTb](https://www.cocotb.org/) based Python test is developed as explained. 
+
+<img width="738" alt="env" src="https://user-images.githubusercontent.com/88900482/182138073-c438176a-4e56-446e-a24e-a91b31e03411.PNG">
+
+## 3.2 Test Scenario 
+
+<img width="843" alt="test_pass_ANDN" src="https://user-images.githubusercontent.com/88900482/182138304-3e91c192-3822-4717-af26-97938d972719.PNG">
+
+## 3.3 Test fails
+
+<img width="832" alt="test-fails" src="https://user-images.githubusercontent.com/88900482/182138425-2fb1ce3a-3ebe-4449-80e6-b71859467b3c.PNG">
+
+
 # 4. Water Bottle Vending Machine Verification- Level3 Design
 ## 4.1 Verification Environment
 The [CoCoTb](https://www.cocotb.org/) based Python test is developed as explained. 
