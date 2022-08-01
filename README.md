@@ -1,6 +1,6 @@
 # challenges-MadhuriKadam9
 challenges-MadhuriKadam9 created by GitHub Classroom
-# 1. Mux Design Verification
+# 1. Mux Design Verification - Level 1 design 1
 The verification environment is setup using [Vyoma's UpTickPro](https://vyomasystems.com) provided for the hackathon.
 <img width="830" alt="S1" src="https://user-images.githubusercontent.com/88900482/182027817-d6a61724-564e-4a04-a722-075dedcb33d1.PNG">
 
@@ -43,7 +43,7 @@ Updating the design i.e. adding the inp30 entry in design code and re-running th
 ![Bug-fixed](https://user-images.githubusercontent.com/88900482/182028630-93d4ede9-85f5-4192-bc04-3788dfbace8a.PNG)
 
 
-# 2. Sequence Detector Design Verification
+# 2. Sequence Detector Design Verification - Level1 Design 2
 ## 2.1 Verification Environment
 The [CoCoTb](https://www.cocotb.org/) based Python test is developed as explained. 
 The test drives inputs to the Design Under Test (Sequence Detector module here) which has 3 each inputs clk, reset and inp_bit and gives High on one bit output *seq_seen* if the said sequence i.e. 1011 is detected.
@@ -75,7 +75,7 @@ Updating the design i.e. making required changes in design code as shown above a
 
 <img width="746" alt="Bug-fixed-test pass" src="https://user-images.githubusercontent.com/88900482/182029881-ed783b09-21e9-4dc5-b9f4-69bb7db933ce.PNG">
 
-# 3. Bitmanipulation Processor Verification
+# 3. Bitmanipulation Processor Verification - Level2 Design
 ## 3.1 Verification Environment
 The [CoCoTb](https://www.cocotb.org/) based Python test is developed as explained. 
 
